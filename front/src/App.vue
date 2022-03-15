@@ -5,6 +5,11 @@
     <label for="firstName">名</label>
     <input type="text" id="firstName" v-model="firstName" />
     <button @click="onClickButton">Post Data</button>
+    <div id="nav">
+      <router-link to="/">TopPage</router-link> |
+      <router-link to="/words">WordPage</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
