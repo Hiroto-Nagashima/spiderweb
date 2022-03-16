@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from "vue-router";
 const TopPage = () => import("./components/Pages/TopPage.vue");
 const TestPage = () => import("./components/Pages/TestPage.vue");
 const WordPage = () => import("./components/Pages/WordPage.vue");
-import NotFound from "./components/Pages/NotFound.vue";
+const NotFound = () => import("./components/Pages/NotFound.vue");
 
 Vue.use(VueRouter);
 
@@ -21,7 +21,11 @@ const routes: Array<RouteConfig> = [
     component: TestPage,
   },
   {
-    path: "*",
+    path: "/not-found",
+    component: NotFound,
+  },
+  {
+    path: "/*",
     component: NotFound,
     redirect: "/not-found",
   },
