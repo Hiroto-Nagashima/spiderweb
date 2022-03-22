@@ -1,46 +1,19 @@
 <template>
   <div id="app">
-    <label for="lastName">姓</label>
-    <input type="text" id="lastName" v-model="lastName" />
-    <label for="firstName">名</label>
-    <input type="text" id="firstName" v-model="firstName" />
-    <button @click="onClickButton">Post Data</button>
-    <div id="nav">
-      <router-link to="/">TopPage</router-link> |
-      <router-link to="/words">WordPage</router-link>
-    </div>
     <router-view />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import axios from "axios";
 
 export default Vue.extend({
   name: "App",
   components: {},
   data() {
-    return {
-      firstName: "",
-      lastName: "",
-    };
+    return {};
   },
-  methods: {
-    onClickButton() {
-      axios
-        .post("http://localhost:3000/users", {
-          first_name: this.firstName,
-          last_name: this.lastName,
-        })
-        .then((response: any) => {
-          console.log(response.data.first_name);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  },
+  methods: {},
 });
 </script>
 
